@@ -8,6 +8,12 @@ const UploadRoute = require("./routes/UploadRoute");
 
 const app = express();
 app.use(cors());
+const corsOptions = {
+  origin: '*',  // Allow only this domain to access the server
+  methods: ['GET', 'POST'],       // Allow only GET and POST methods
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
+  credentials: true,              // Allow cookies and credentials
+};
 app.use(express.json());
 app.use(express.static("public"));
 
